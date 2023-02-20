@@ -24,3 +24,7 @@ return $request->user();
 });
 
 Route::get('/items',[ItemController::class,'index']);
+
+Route::prefix('/item')->group(function(){
+Route::post('/store',[ItemController::class,'store']);
+});
